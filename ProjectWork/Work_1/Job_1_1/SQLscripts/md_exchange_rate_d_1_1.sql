@@ -2,7 +2,7 @@
 UPDATE ds.md_exchange_rate_d as dsmerd 
 	SET 
 		 data_actual_end_date = to_date(merd."DATA_ACTUAL_END_DATE", 'YYYY.mm.dd')
-		,reduced_cource = merd."CURRENCY_RK"
+		,reduced_cource = merd."REDUCED_COURCE"
 		,code_iso_num = merd."CODE_ISO_NUM"
 	FROM preload.md_exchange_rate_d as merd
 	WHERE 
