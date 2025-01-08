@@ -10,7 +10,7 @@ UPDATE ds.md_exchange_rate_d as dsmerd
 			AND merd."CURRENCY_RK" = dsmerd.currency_rk)
 		AND
 		(data_actual_end_date <> to_date(merd."DATA_ACTUAL_END_DATE", 'YYYY.mm.dd')
-			OR reduced_cource <> merd."CURRENCY_RK"::FLOAT8
+			OR reduced_cource <> merd."REDUCED_COURCE"::FLOAT8
 			OR code_iso_num <> merd."CODE_ISO_NUM"::VARCHAR(3));
 --Идёт пеернос новых данных из таблицы preload.md_exchange_rate_d, схемы предзагрузки.
 INSERT INTO ds.md_exchange_rate_d(
